@@ -17,6 +17,18 @@ demo 中实现了一个简单的基于 ZTree 风格的树，并完成了折叠/�
 
 ## 树组件组成
 
-* `TreeComponent` is a global command-line utility that you use to create new projects.
-* `NodeComponent` is a development dependency in the generated projects (including this one).
-* `SubTreeComponent` 
+- `TreeComponent` 负责渲染整个树
+  - 传参：
+    - `TreeId` tree 标识
+    - `NodeList` tree 所有数据
+   - 方法：
+    - `onClickFunc` 节点点击事件
+- `NodeComponent` 负责渲染树的一个节点
+- `SubTreeComponent` 负责渲染子树的，大致和 Tree 组件相同，重写是为了和 Tree 组件有不同的功能和样式
+
+为每个组件添加 `key` 或 `id` 的目的是为了在重新渲染时加快 react diff 算法速度，即比较虚拟 Dom 和真实 Dom，具体查看
+[keys](https://doc.react-china.org/docs/lists-and-keys.html#keys)
+
+## 异步加载
+
+使用 es6 的 `async/await` 结合 axios 请求 Github API 查找用户信息，查看更多 `async/await` 请查看 *阮一峰的* [async/await](http://es6.ruanyifeng.com/#docs/async)
