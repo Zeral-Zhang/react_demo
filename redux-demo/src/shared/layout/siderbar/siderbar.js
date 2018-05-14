@@ -1,11 +1,11 @@
 import { Icon, Layout, Menu } from "antd";
+import { NavLink as Link } from "react-router-dom";
 import * as React from "react";
 
-import './siderbar.css';
+import "./siderbar.css";
 
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
-
 
 export default class SiderComponent extends React.Component {
 
@@ -28,8 +28,10 @@ export default class SiderComponent extends React.Component {
         <div className="logo"/>
         <Menu theme="dark" defaultSelectedKeys={ ["1"] } mode="inline">
           <Menu.Item key="1">
-            <Icon type="pie-chart"/>
-            <span>Option 1</span>
+            <Link to="/">
+              <Icon type="pie-chart"/>
+              <span>DashBoard</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="desktop"/>
@@ -37,9 +39,8 @@ export default class SiderComponent extends React.Component {
           </Menu.Item>
           <SubMenu
             key="sub1"
-            title={ <span><Icon type="user"/><span>User</span></span> }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
+            title={ <span><Icon type="user"/><span>User</span></span> }>
+            <Menu.Item key="3"><Link to="/">Home</Link></Menu.Item>
             <Menu.Item key="4">Bill</Menu.Item>
             <Menu.Item key="5">Alex</Menu.Item>
           </SubMenu>

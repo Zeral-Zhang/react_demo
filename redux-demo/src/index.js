@@ -5,19 +5,19 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 // redux
 import { createStore, applyMiddleware, compose } from "redux";
-import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 // reducer
 import reducer from "./shared/reducers";
 // antd 国际化
 import { LocaleProvider } from "antd";
 import zh_CN from "antd/lib/locale-provider/zh_CN";
-// 路由器
-import { BrowserRouter as Router } from "react-router-dom";
 // 中间件
 import { loadingBarMiddleware } from "react-redux-loading-bar";
 import promiseMiddleware from "redux-promise-middleware";
 import thunkMiddleware from "redux-thunk";
 import errorMiddleware from "./config/error-middleware";
+
+import Mock from 'mockjs';
 
 // 默认中间件
 const defaultMiddlewares = [
@@ -43,9 +43,7 @@ const render = Component =>
   ReactDOM.render(
     <Provider store={ store }>
       <LocaleProvider locale={ zh_CN }>
-        <Router>
-          <Component/>
-        </Router>
+        <Component/>
       </LocaleProvider>
     </Provider>,
     rootEl
