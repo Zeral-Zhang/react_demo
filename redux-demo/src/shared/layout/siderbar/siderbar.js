@@ -34,8 +34,10 @@ export default class SiderComponent extends React.Component {
             </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="desktop"/>
-            <span>Option 2</span>
+            <Link to="/user">
+              <Icon type="desktop"/>
+              <span>DashBoard</span>
+            </Link>
           </Menu.Item>
           <SubMenu
             key="sub1"

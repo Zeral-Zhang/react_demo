@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./components/home";
-import DashBoard from "./components/dashboard";
+import DashBoard from "./components/Dashboard/dashboard";
+import User from "./components/User/user";
 import DocumentTitle from "react-document-title";
 
 /**
@@ -15,9 +15,7 @@ import DocumentTitle from "react-document-title";
 function WrapTitle(WrappedComponent, title = "React Demo") {
   return class WrapTitle extends React.Component {
     render() {
-      return (<DocumentTitle title={ title }>
-        <WrappedComponent { ...this.props } />
-      </DocumentTitle>);
+      return (<DocumentTitle title={ title }><WrappedComponent { ...this.props } /></DocumentTitle>);
     }
   };
 }
@@ -26,6 +24,7 @@ function WrapTitle(WrappedComponent, title = "React Demo") {
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={ WrapTitle(DashBoard, "控制面板") }/>
+    <Route path="/user" component={ WrapTitle(User, "用户管理") }/>
     <Route render={ () => <h3>404 Not Found.</h3> }/>
   </Switch>
 );

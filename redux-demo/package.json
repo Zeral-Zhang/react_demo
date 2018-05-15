@@ -6,6 +6,7 @@
     "antd": "^3.5.1",
     "axios": "^0.18.0",
     "react": "^16.3.2",
+    "react-document-title": "^2.0.3",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-redux-loading-bar": "^4.0.4",
@@ -19,17 +20,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.3",
-    "@storybook/addon-links": "^3.4.3",
-    "@storybook/addons": "^3.4.3",
-    "@storybook/react": "^3.4.3",
     "babel-plugin-import": "^1.7.0",
-    "mockjs": "^1.0.1-beta3",
     "react-app-rewired": "^1.5.2"
   }
 }

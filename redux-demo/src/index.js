@@ -17,8 +17,6 @@ import promiseMiddleware from "redux-promise-middleware";
 import thunkMiddleware from "redux-thunk";
 import errorMiddleware from "./config/error-middleware";
 
-import Mock from 'mockjs';
-
 // 默认中间件
 const defaultMiddlewares = [
   thunkMiddleware,
